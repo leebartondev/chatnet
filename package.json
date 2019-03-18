@@ -1,0 +1,23 @@
+{
+  "name": "chatnet",
+  "version": "1.0.0",
+  "description": "COSC-4342 Computer Networks project - web app chatting application.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hleebarton97/chatnet.git"
+  },
+  "author": "Henry Lee Barton III, Lee Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
