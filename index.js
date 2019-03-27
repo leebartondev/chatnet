@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'client', 'index.html')));
+//app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Render static index page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // API routes
