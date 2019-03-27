@@ -1,13 +1,13 @@
-body {
-    border: solid;
-}
+.Title { text-align: center; margin: auto; }
 
-.Title {
-    border: solid;
-    margin: auto;
-}
+.Container { width: 700px; margin: auto; border: solid 1px; }
 
-.Container {
-    border: solid;
-    margin: auto;
-}
+    .Chatbox { height: 400px; }
+
+    .Messenger { display: flex; flex-direction: row; border-top: solid 1px; border-left: solid 1px; margin-left: -1px; }
+
+        input { flex-grow: 1; border: none; font-size: 16px; padding: 8px; }
+
+        button { width: 100px; border: none; border-left: solid 1px; background-color: white; }
+        button:hover { background-color: grey; cursor: pointer; }
+        button:active { background-color: lightgray; }
