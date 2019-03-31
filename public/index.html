@@ -8,15 +8,24 @@
 
         <h1 class="Title"> Chatnet </h1>
 
-        <div class="Container">
-            <div class="Chatbox">
+        <div class="Container Borderless Flex" id="container-login">
+            <input id="input-login" placeholder="Enter a name..." type="text" name="login">
+            <button id="btn-login" name="login"> Done </button>
+        </div>
+
+        <div class="Container Hidden" id="container-chat">
+            <div id="chatbox" class="Chatbox">
 
             </div>
             <div class="Messenger">
                 <input placeholder="Send a message..." type="text" name="messenger">
-                <button name="messenger"> Send </button>
+                <button id="btn-send" name="messenger"> Send </button>
             </div>
         </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/sockets.js"></script>
 
     </body>
 </html>

@@ -1,13 +1,22 @@
 .Title { text-align: center; margin: auto; }
 
+.Hidden { display: none; }
+.Flex { display: flex; }
+
 .Container { width: 700px; margin: auto; border: solid 1px; }
+.Container.Borderless { border: none; }
+
+.Container#container-login { margin-top: 50px; width: 400px; }
+
 
     .Chatbox { height: 400px; }
 
     .Messenger { display: flex; flex-direction: row; border-top: solid 1px; border-left: solid 1px; margin-left: -1px; }
 
         input { flex-grow: 1; border: none; font-size: 16px; padding: 8px; }
+        input[name="login"] { border-bottom: solid 1px; }
 
         button { width: 100px; border: none; border-left: solid 1px; background-color: white; }
+        button[name="login"] { border: solid 1px; }
         button:hover { background-color: grey; cursor: pointer; }
         button:active { background-color: lightgray; }
