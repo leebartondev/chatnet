@@ -9,7 +9,15 @@
 .Container#container-login { margin-top: 50px; width: 400px; }
 
 
-    .Chatbox { height: 400px; }
+    .Chatbox { height: 400px; padding-bottom: 5px; overflow: hidden; overflow-y: scroll; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+        .Chattext { margin: 0; margin-left: 5px; margin-top: 5px; padding: 0; font-weight: bold; }
+            .Red { color: red; }
+            .Blue { color: blue; }
+            .Green { color: green; }
+            .Yellow { color: #DAE500; }
+            .Orange { color: orange; }
+            .Purple { color: purple; }
+            .Black { color: black; font-weight: normal; }
 
     .Messenger { display: flex; flex-direction: row; border-top: solid 1px; border-left: solid 1px; margin-left: -1px; }
 
