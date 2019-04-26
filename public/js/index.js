@@ -14,6 +14,9 @@ document.getElementById('btn-login')
         document.getElementById('input-login').value = '';
     });
 
+/**
+ * 
+ */
 document.getElementById('btn-send')
     .addEventListener('click', () => {
         sendMessage(document.getElementById('input-msg').value);
@@ -35,6 +38,16 @@ document.addEventListener('keyup', e => {
     }
 });
 
+/**
+ * Resize the chatbox when the window size
+ * is less than the chatbox width.
+ * :EVENT RESIZE:
+ */
+window.addEventListener('resize', () => {
+    resizeChatBox(window.innerWidth, window.innerHeight);
+    resizeLoginBox(window.innerWidth, window.innerHeight);
+});
+
 /* -------------------------------------------------------------- */
 
 /**
@@ -52,6 +65,9 @@ function loginUser(username) {
 
     // Show chat
     displayChat();
+
+    // Resize chatbox
+    resizeChatBox();
 
     // Broadcast user login
     socket.emit('log in', _username);
@@ -123,4 +139,34 @@ function displayChat() {
     // Show chat
     document.getElementById('container-chat')
         .classList.remove('Hidden');
+}
+
+/**
+ * Set the size of the chatbox for
+ * small windows / mobile devices.
+ * 
+ * @param {Number} w
+ * @param {Number} h
+ */
+function resizeChatBox(w, h) {
+    // Check current window width
+    if(w < 720) {
+        // Set the chatbox width to the window width
+        document.getElementById('container-chat').style.width = (w - 20) + 'px';
+    }
+}
+
+/**
+ * Set the size of the login box for
+ * small windows / mobile devices.
+ * 
+ * @param {Number} w 
+ * @param {Number} h 
+ */
+function resizeLoginBox(w, h) {
+    // Check current window width
+    if(w < 410) {
+        // Set the login box width to the window width
+        document.getElementById('container-login').style.width = (w - 20) + 'px';
+    }
 }

@@ -8,7 +8,6 @@
 
 .Container#container-login { margin-top: 50px; width: 400px; }
 
-
     .Chatbox { height: 400px; padding-bottom: 5px; overflow: hidden; overflow-y: scroll; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
         .Chattext { margin: 0; margin-left: 5px; margin-top: 5px; padding: 0; font-weight: bold; }
             .Red { color: red; }
@@ -28,3 +27,4 @@
         button[name="login"] { border: solid 1px; }
         button:hover { background-color: grey; cursor: pointer; }
         button:active { background-color: lightgray; }
+
