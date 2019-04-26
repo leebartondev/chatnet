@@ -123,4 +123,10 @@ function displayChat() {
     // Show chat
     document.getElementById('container-chat')
         .classList.remove('Hidden');
+        
+    document.getElementById('container-users')
+        .classList.remove('Hidden');
+
+    document.getElementById('user-title')
+        .classList.remove('Hidden')
 }
