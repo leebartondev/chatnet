@@ -4,7 +4,6 @@ module.exports = io => {
     
     // When client connects
     io.on('connection', socket => {
-
         /**
          * User logs in.
          */
@@ -35,8 +34,14 @@ module.exports = io => {
          * User has left.
          */
         socket.on('disconnect', () => {
+            socket.broadcast.emit('left', {
+                username: socket.username
+            })
+            console.log(socket.username + ' disconnected');
+
             if(_users_count > 0) { _users_count--; }
             console.log('Users: ' + _users_count);
+            
         });
     });
 };

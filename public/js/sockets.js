@@ -7,3 +7,7 @@ socket.on('joined', obj => {
 socket.on('message', obj => {
     userSentMessage(obj.username, obj.message);
 });
+
+socket.on('left', obj => {
+    userLeft(obj.username);
+})

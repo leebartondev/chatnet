@@ -91,7 +91,8 @@ function userHasJoined(username) {
     let color = getUserColorByUsername(username);
     console.log(color);
     // Show in chat user joined
-    _chatbox.innerHTML += '<p class="Chattext ' + color + '"> ' + username + ' <span class="Black"> has joined the chat! </span> </p>';
+    _chatbox.innerHTML += '<p class="Chattext ' + ' id="'+username+'" '+ color + '"> ' + username + ' <span class="Black"> has joined the chat! </span> </p>';
+    userContainerAdd(username);
 }
 
 function userSentMessage(username, msg) {
@@ -109,6 +110,12 @@ function userSentMessage(username, msg) {
 
     // Always show latest activity
     _chatbox.scrollTop = _chatbox.scrollHeight;
+}
+
+function userLeft(username) {
+
+    _chatbox.innerHTML = username + " has left.. ";
+    userContainerRemove(username);
 }
 
 /**
@@ -129,4 +136,23 @@ function displayChat() {
 
     document.getElementById('user-title')
         .classList.remove('Hidden')
+}
+
+// add user to users container
+function userContainerAdd(username){
+
+    var par = document.createElement("LI");
+    par.setAttribute("id", username)
+    var node = document.createTextNode(username);
+    par.appendChild(node);
+
+    var element = document.getElementById("container-users");
+    element.appendChild(par);
+}
+// remove user from users container
+function userContainerRemove(username){
+
+    var parent = document.getElementById("container-users");
+    var child = document.getElementById(username);
+    parent.removeChild(child);
 }

@@ -1,5 +1,5 @@
-.Title { text-align: center; margin: auto; }
-#user-title{color: aliceblue; margin-left: 5%; text-align: left; font-size: 30px;}
+.Title { text-align: center; color:white; margin: auto; }
+#user-title{color: white; margin-left: 5%; text-align: left; font-size: 30px;}
 
 .Hidden { display: none; }
 .Flex { display: flex; }
@@ -10,7 +10,7 @@
 .Container#container-login { margin-top: 50px; width: 400px; }
     .Container#container-chat {float:right; margin-right: 20%;}
 
-    .Chatbox { height: 400px; padding-bottom: 5px; overflow: hidden; overflow-y: scroll; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+    .Chatbox { height: 400px; background: white; padding-bottom: 5px; overflow: hidden; overflow-y: scroll; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
         .Chattext { margin: 0; margin-left: 5px; margin-top: 5px; padding: 0; font-weight: bold; }
             .Red { color: red; }
             .Blue { color: blue; }
@@ -30,4 +30,5 @@
         button:hover { background-color: grey; cursor: pointer; }
         button:active { background-color: lightgray; }
 
-#container-users{ background: aliceblue; float: left; width: 200px; height: 500px; margin-left: 5%;}
+#container-users{ background: white; float: left; width: 200px; height: 500px; margin-left: 5%;}
+#users{align-items: center;}
