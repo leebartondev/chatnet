@@ -16,7 +16,8 @@ module.exports = io => {
 
             // Inform all other clients of new user
             socket.broadcast.emit('joined', {
-                username: socket.username
+                username: socket.username,
+                users: _users_count
             });
         });
 
@@ -37,6 +38,10 @@ module.exports = io => {
         socket.on('disconnect', () => {
             if(_users_count > 0) { _users_count--; }
             console.log('Users: ' + _users_count);
+            socket.broadcast.emit('left', {
+                username: socket.username,
+                users: _users_count
+            });
         });
     });
 };

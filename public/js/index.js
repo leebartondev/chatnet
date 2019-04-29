@@ -105,9 +105,12 @@ function userHasJoined(username) {
 
     // Get user's color
     let color = getUserColorByUsername(username);
-    console.log(color);
+
     // Show in chat user joined
     _chatbox.innerHTML += '<p class="Chattext ' + color + '"> ' + username + ' <span class="Black"> has joined the chat! </span> </p>';
+    
+    // Always show latest activity
+    _chatbox.scrollTop = _chatbox.scrollHeight;
 }
 
 function userSentMessage(username, msg) {
@@ -122,6 +125,17 @@ function userSentMessage(username, msg) {
 
     // Show message sent in chat
     _chatbox.innerHTML += '<p class="Chattext ' + color + '"> ' + username + ': <span class="Black"> ' + msg + ' </span> </p>';
+
+    // Always show latest activity
+    _chatbox.scrollTop = _chatbox.scrollHeight;
+}
+
+function userHasLeft(username) {
+    // Get user's color
+    let color = getUserColorByUsername(username);
+
+    // Show user has left in chat
+    _chatbox.innerHTML += _chatbox.innerHTML += '<p class="Chattext ' + color + '"> ' + username + ' <span class="Black"> has left the chat! </span> </p>';
 
     // Always show latest activity
     _chatbox.scrollTop = _chatbox.scrollHeight;
