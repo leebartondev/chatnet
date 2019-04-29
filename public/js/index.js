@@ -135,7 +135,7 @@ function userHasLeft(username) {
     let color = getUserColorByUsername(username);
 
     // Show user has left in chat
-    _chatbox.innerHTML += _chatbox.innerHTML += '<p class="Chattext ' + color + '"> ' + username + ' <span class="Black"> has left the chat! </span> </p>';
+    _chatbox.innerHTML += '<p class="Chattext ' + color + '"> ' + username + ' <span class="Black"> has left the chat! </span> </p>';
 
     // Always show latest activity
     _chatbox.scrollTop = _chatbox.scrollHeight;
