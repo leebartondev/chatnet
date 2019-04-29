@@ -36,12 +36,15 @@ module.exports = io => {
          * User has left.
          */
         socket.on('disconnect', () => {
-            if(_users_count > 0) { _users_count--; }
+            if(_users_count > 0) { 
+                _users_count--; 
+                // Inform all other clients of user leaving
+                socket.broadcast.emit('left', {
+                    username: socket.username,
+                    users: _users_count
+                });
+            }
             console.log('Users: ' + _users_count);
-            socket.broadcast.emit('left', {
-                username: socket.username,
-                users: _users_count
-            });
         });
     });
 };
