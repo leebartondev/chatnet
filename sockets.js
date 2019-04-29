@@ -39,10 +39,12 @@ module.exports = io => {
             if(_users_count > 0) { 
                 _users_count--; 
                 // Inform all other clients of user leaving
-                socket.broadcast.emit('left', {
-                    username: socket.username,
-                    users: _users_count
-                });
+                if(socket.username !== undefined) {
+                    socket.broadcast.emit('left', {
+                        username: socket.username,
+                        users: _users_count
+                    });
+                }
             }
             console.log('Users: ' + _users_count);
         });
